@@ -1,0 +1,59 @@
+.detailsContainer {
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.posterContainer {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.posterImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detailsContent {
+    flex: 2;
+}
+
+.movieTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.overview {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.additionalDetails {
+    font-size: 14px;
+}
+
+.additionalDetails p {
+    margin-bottom: 5px;
+}
+
+.additionalDetails strong {
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating span {
+    color: #f39c12; /* Star color */
+    font-size: 20px;
+    margin-right: 5px;
+}

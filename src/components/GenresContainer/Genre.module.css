@@ -1,0 +1,24 @@
+.genres {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.genreContainer {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Розміщуємо блоки в один ряд */
+}
+
+.genreContainer:hover {
+    background-color: #d3d3d3; /* Змінюємо колір фону при наведенні */
+}
+
+.genreContainer.selected {
+    background-color: cadetblue; /* Колір фону для вибраного жанру */
+    color: white; /* Колір тексту для вибраного жанру */
+}

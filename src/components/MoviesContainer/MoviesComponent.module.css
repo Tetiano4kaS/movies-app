@@ -1,0 +1,58 @@
+.moviesContainer {
+    padding: 1rem;
+    background-color: var(--movies-background);
+    color: var(--movies-color);
+}
+
+.moviesRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Це розташує фільми по центру горизонтально */
+}
+
+.movieCard {
+    background-color: var(--movie-card-background);
+    border: 1px solid var(--movie-card-border);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.movieCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movieTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.moviePoster {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+
+.movieRating {
+    font-size: 0.9rem;
+    color: var(--movie-rating-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.starIcon {
+    margin-right: 0.2rem;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}

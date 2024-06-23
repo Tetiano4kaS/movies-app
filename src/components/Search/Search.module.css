@@ -1,0 +1,18 @@
+.searchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.searchInput:focus {
+    border-color: var(--input-focus-border);
+    outline: none;
+}
