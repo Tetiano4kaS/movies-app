@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+
 import {IGenreModule} from "../../interfaces/IGenreModule";
 import {useAppDispatch, useAppSelector} from "../../hooks/useHooks";
 import {genreActions} from "../../redux/slices/genreSlice";
@@ -9,14 +10,15 @@ interface IProps {
 }
 
 const GenreContainer: FC<IProps> = ({genre}) => {
-    const {genreIds}= useAppSelector(state => state.genres)
+    const {genreIds} = useAppSelector(state => state.genres)
     const dispatch = useAppDispatch();
-    const handleClick = (id:number) => {
+    const handleClick = (id: number) => {
         dispatch(genreActions.setGenreId(id))
     }
 
     return (
-        <div onClick={() => handleClick(genre.id)} className={`${styles.genreContainer} ${genreIds.includes(genre.id.toString()) ? styles.selected : ''}`} >
+        <div onClick={() => handleClick(genre.id)}
+             className={`${styles.genreContainer} ${genreIds.includes(genre.id.toString()) ? styles.selected : ''}`}>
             {genre.name}
         </div>
     );

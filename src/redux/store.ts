@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+
 import {moviesReducer} from "./slices/moviesSlice";
 import {genreReducer} from "./slices/genreSlice";
 import {themeReducer} from "./slices/themeSlice";
@@ -8,11 +9,10 @@ export const store = configureStore({
     reducer: {
         movies: moviesReducer,
         genres: genreReducer,
-        theme:themeReducer,
-        search:searchReducer
+        theme: themeReducer,
+        search: searchReducer
     },
 });
-
 
 export type RootState = ReturnType<typeof store.getState>
 

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { useAppDispatch } from "../../hooks/useHooks";
-import { searchActions } from "../../redux/slices/searchSlice";
+import React, {useState} from 'react';
+
+import {useAppDispatch} from "../../hooks/useHooks";
+import {searchActions} from "../../redux/slices/searchSlice";
 import styles from "./Search.module.css"
+
 const SearchComponent = () => {
     const [query, setQuery] = useState('');
     const dispatch = useAppDispatch();
@@ -11,7 +13,7 @@ const SearchComponent = () => {
         if (query.trim() === '') {
             dispatch(searchActions.clearSearchResults());
         } else {
-            dispatch(searchActions.searchMovies({ query, page: 1 }));
+            dispatch(searchActions.searchMovies({query, page: 1}));
         }
     };
 
@@ -33,7 +35,7 @@ const SearchComponent = () => {
                     onChange={handleChange}
                     placeholder="Search for movies..."
                 />
-                <button type="submit">Search</button>
+                <button type="submit" className={styles.searchButton}>Search</button>
             </form>
         </div>
     );

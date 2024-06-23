@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
+
 import {IMovieModel} from "../../interfaces/IMovieModel";
 import {moviesService} from "../../services/moviesService";
-import {AxiosError} from "axios";
 
 type SearchType = {
     search: IMovieModel,
@@ -15,19 +16,19 @@ const initialState: SearchType = {
         total_results: 0
     },
     query: ''
-}
+};
 
 const searchMovies = createAsyncThunk('searchSlice/searchMovies',
     async ({query, page}: { query: string, page: number }, thunkAPI) => {
-    try {
-        const movies = await moviesService.searchMovies(query, page);
-        console.log(movies)
-        return thunkAPI.fulfillWithValue(movies);
-    } catch (e) {
-        const error = e as AxiosError;
-        return thunkAPI.rejectWithValue(error.response?.data);
-    }
-});
+        try {
+            const movies = await moviesService.searchMovies(query, page);
+            console.log(movies)
+            return thunkAPI.fulfillWithValue(movies);
+        } catch (e) {
+            const error = e as AxiosError;
+            return thunkAPI.rejectWithValue(error.response?.data);
+        }
+    });
 
 const clearSearchResults = createAsyncThunk('searchSlice/clearSearchResults', async (_, thunkAPI) => {
     return initialState.search;

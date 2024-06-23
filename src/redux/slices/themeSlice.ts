@@ -11,7 +11,7 @@ const themeSlice = createSlice({
     name: 'themeSlice',
     initialState,
     reducers: {
-        changeTheme(state, action){
+        changeTheme(state, action) {
             state.theme = !state.theme
             localStorage.setItem('theme', `${state.theme}`)
         }
@@ -24,4 +24,4 @@ const {changeTheme} = actions;
 
 const themeActions = {...actions}
 
-export {themeReducer,themeActions}
+export {themeReducer, themeActions}

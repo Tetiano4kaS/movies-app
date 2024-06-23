@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MoviesComponent from "../components/MoviesContainer/MoviesComponent";
 import GenresContainer from "../components/GenresContainer/GenresContainer";
 

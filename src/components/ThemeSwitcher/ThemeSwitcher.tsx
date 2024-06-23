@@ -1,8 +1,8 @@
 import React from 'react';
-import {useAppDispatch, useAppSelector} from "../../hooks/useHooks";
 import Switch from "react-switch";
+
+import {useAppDispatch, useAppSelector} from "../../hooks/useHooks";
 import {themeActions} from "../../redux/slices/themeSlice";
-import styles from "./ThemeSwitcher.module.css"
 
 const ThemeSwitcher = () => {
     const dispatch = useAppDispatch();

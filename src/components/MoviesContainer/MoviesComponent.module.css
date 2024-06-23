@@ -1,19 +1,15 @@
 .moviesContainer {
     padding: 1rem;
-    background-color: var(--movies-background);
-    color: var(--movies-color);
 }
 
 .moviesRow {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center; /* Це розташує фільми по центру горизонтально */
+    justify-content: center;
 }
 
 .movieCard {
-    background-color: var(--movie-card-background);
-    border: 1px solid var(--movie-card-border);
     border-radius: 8px;
     padding: 1rem;
     width: 200px;
@@ -21,6 +17,9 @@
     cursor: pointer;
     text-align: center;
     margin-bottom: 1rem;
+}
+.movieCard_dark{
+color: white;
 }
 
 .movieCard:hover {
@@ -42,7 +41,6 @@
 
 .movieRating {
     font-size: 0.9rem;
-    color: var(--movie-rating-color);
     display: flex;
     align-items: center;
     justify-content: center;

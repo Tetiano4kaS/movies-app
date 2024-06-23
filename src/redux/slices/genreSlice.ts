@@ -1,7 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
+
 import {IGenreModule} from "../../interfaces/IGenreModule";
 import {moviesService} from "../../services/moviesService";
-import {AxiosError} from "axios";
 
 type GenreSliceType = {
     genres: IGenreModule[],
@@ -21,7 +22,6 @@ const loadGenreList = createAsyncThunk('genreSlice/loadGenreList', async (_, thu
         return thunkAPI.rejectWithValue(error.response?.data)
     }
 });
-
 
 const genreSlice = createSlice({
     name: 'genreSlice',
