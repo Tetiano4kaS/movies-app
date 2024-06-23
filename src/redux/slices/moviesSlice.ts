@@ -79,7 +79,6 @@ const loadMovies = createAsyncThunk('moviesSlice/loadMovies',
 const loadMovieDetails = createAsyncThunk('moviesSlice/loadMovieDetails', async (id: string, thunkAPI) => {
     try {
         const detail = await moviesService.getDetails(id);
-        console.log(detail)
         return thunkAPI.fulfillWithValue(detail)
     } catch (e) {
         const error = e as AxiosError;

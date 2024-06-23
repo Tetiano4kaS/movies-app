@@ -29,7 +29,6 @@ const moviesService = {
     getDetails: async (id: string): Promise<IDetailModel> => {
         const url = urls.movieDetails(id)
         const movieDetail = await axiosInstance.get(url)
-        console.log(movieDetail.data)
         return movieDetail.data
     }
 };
