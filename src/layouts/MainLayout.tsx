@@ -1,8 +1,9 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
-import HeaderComponent from "../components/Header/HeaderComponent";
 import cn from "classnames";
-import styles from "../components/ThemeSwitcher/ThemeSwitcher.module.css";
+
+import HeaderComponent from "../components/Header/HeaderComponent";
+import styles from "./MainLayout.module.css"
 import {useAppSelector} from "../hooks/useHooks";
 
 const MainLayout = () => {

@@ -4,7 +4,8 @@ const urls = {
     moviesUrl: '/discover/movie',
     byMovieId: (id: string) => `/movie/${id}`,
     genreList: '/genre/movie/list',
-    searchMovie: '/search/movie'
+    searchMovie: '/search/movie',
+    movieDetails: (id: string) => `/movie/${id}`
 }
 
 
