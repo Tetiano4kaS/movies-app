@@ -12,6 +12,7 @@ const MoviesComponent = () => {
     const {search, query} = useAppSelector(state => state.search);
     const dispatch = useAppDispatch();
     const [page, setPage] = useState(1);
+    const {isLoading} = useAppSelector(state => state.movies);
 
     useEffect(() => {
         dispatch(moviesActions.loadMovies({page, genreIds}));
@@ -31,16 +32,19 @@ const MoviesComponent = () => {
     const resultsToRender = useMemo(() => hasSearchResults ? search.results : movies.results, [hasSearchResults, search, movies]);
 
     return (
-        <div className={styles.moviesContainer}>
-            <div className={styles.moviesRow}>
-                {resultsToRender.map(movie => <MovieComponent key={movie.id} movie={movie}/>)}
-            </div>
-            <div className={styles.pagination}>
-                <PaginationComponent
-                    currentPage={page}
-                    onPageChange={handlePageChange}
-                />
-            </div>
+        <div>
+            {isLoading ? <p>Loading...</p> :
+                <div className={styles.moviesContainer}>
+                    <div className={styles.moviesRow}>
+                        {resultsToRender.map(movie => <MovieComponent key={movie.id} movie={movie}/>)}
+                    </div>
+                    <div className={styles.pagination}>
+                        <PaginationComponent
+                            currentPage={page}
+                            onPageChange={handlePageChange}
+                        />
+                    </div>
+                </div>}
         </div>
     );
 };
