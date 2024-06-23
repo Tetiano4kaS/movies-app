@@ -6,9 +6,16 @@
     background-color:#97cadb;
     color: #fff;
 }
+
 .header_dark{
     background-color: #001b48;
 }
+
+.leftContainer {
+    display: flex;
+    align-items: center;
+}
+
 .rightContainer {
     display: flex;
     align-items: center;
@@ -16,4 +23,11 @@
 
 .rightContainer > * {
     margin-left: 20px;
+}
+
+.icon {
+    font-size: 2rem;
+    color: whitesmoke;
+    margin-right: 15px;
+    cursor: pointer;
 }
