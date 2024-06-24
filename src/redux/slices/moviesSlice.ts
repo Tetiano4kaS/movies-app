@@ -8,7 +8,8 @@ type MoviesSliceType = {
     movies: IMovieModel,
     movie: Result,
     details: IDetailModel,
-    isLoading: boolean
+    isLoading: boolean,
+    topRated: IMovieModel
 }
 
 let initialState: MoviesSliceType = {
@@ -62,7 +63,13 @@ let initialState: MoviesSliceType = {
         vote_average: 0,
         vote_count: 0,
     },
-    isLoading: false
+    isLoading: false,
+    topRated: {
+        page: 1,
+        results: [],
+        total_pages: 0,
+        total_results: 0
+    }
 };
 
 const loadMovies = createAsyncThunk('moviesSlice/loadMovies',
@@ -84,6 +91,16 @@ const loadMovieDetails = createAsyncThunk('moviesSlice/loadMovieDetails', async 
         const error = e as AxiosError;
         return thunkAPI.rejectWithValue(error.response?.data);
     }
+});
+
+const loadTopRatedMovies = createAsyncThunk('moviesSlice/loadTopRatedMovies', async (_, thunkAPI) => {
+    try {
+        const topRated = await moviesService.getTopRated()
+        return thunkAPI.fulfillWithValue(topRated)
+    } catch (e) {
+        const error = e as AxiosError;
+        return thunkAPI.rejectWithValue(error.response?.data);
+    }
 })
 
 
@@ -101,6 +118,9 @@ const moviesSlice = createSlice({
                 state.details = action.payload;
                 state.isLoading = false;
             })
+            .addCase(loadTopRatedMovies.fulfilled, (state, action) => {
+                state.topRated = action.payload
+            })
             .addMatcher(isRejected(loadMovies, loadMovieDetails), (state) => {
                 state.isLoading = false;
             })
@@ -111,7 +131,7 @@ const moviesSlice = createSlice({
 
 const {reducer: moviesReducer, actions} = moviesSlice;
 
-const moviesActions = {...actions, loadMovies, loadMovieDetails};
+const moviesActions = {...actions, loadMovies, loadMovieDetails, loadTopRatedMovies};
 
 export {
     moviesActions,

@@ -18,8 +18,9 @@
     text-align: center;
     margin-bottom: 1rem;
 }
-.movieCard_dark{
-color: white;
+
+.movieCard_dark {
+    color: white;
 }
 
 .movieCard:hover {
@@ -49,8 +50,73 @@ color: white;
 .starIcon {
     margin-right: 0.2rem;
 }
+
 .pagination {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+}
+
+.topRatedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topRatedContainer_dark {
+    background-color: #001b48;
+}
+
+.titleTopRated {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.titleTopRated_dark {
+    color: whitesmoke;
+}
+
+.moviesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.topRatedCard {
+    width: 150px;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.topRatedCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.posterTopRated {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.topRatedTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0.5rem;
 }

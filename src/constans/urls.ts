@@ -5,7 +5,8 @@ const urls = {
     byMovieId: (id: string) => `/movie/${id}`,
     genreList: '/genre/movie/list',
     searchMovie: '/search/movie',
-    movieDetails: (id: string) => `/movie/${id}`
+    movieDetails: (id: string) => `/movie/${id}`,
+    topRated: '/movie/top_rated'
 }
 
 

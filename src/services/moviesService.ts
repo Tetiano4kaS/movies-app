@@ -30,6 +30,11 @@ const moviesService = {
         const url = urls.movieDetails(id)
         const movieDetail = await axiosInstance.get(url)
         return movieDetail.data
+    },
+    getTopRated: async (): Promise<IMovieModel> => {
+        const url = urls.topRated
+        const topRated = await axiosInstance.get(url)
+        return topRated.data
     }
 };
 
